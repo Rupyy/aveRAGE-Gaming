@@ -38,8 +38,8 @@ $show=array(3,1,2,5);
 
 //config of the default include to show on page load & to define the style of the switchbox navigation
 $config=array();
-$config['default']=5; //enter one of the numbers of the show array above to be shown as default on page load
-$config['buttonstyle']='arrows'; //available settings: numbers, names, arrows, dropdown
+$config['default']=3; //enter one of the numbers of the show array above to be shown as default on page load
+$config['buttonstyle']='links'; //available settings: numbers, names, arrows, dropdown
 
 //do not edit anything below here if you are not sure what you are doing there
 $boxes=array();
@@ -75,7 +75,7 @@ if($action=='switch'){
 		$target=$config['default'];
 	}
 	
-	$buttons='<div style="width:100%; text-align: center;">';
+	$buttons='<div style="width:100%; text-align: center; padding-bottom: 12px; padding-left: 38px;">';
 	
 	switch ($config['buttonstyle']) {
     
@@ -96,8 +96,8 @@ if($action=='switch'){
       break;
     
     case 'arrows':
-      $currentposition=array_search($target, $show);
-      $current=$show[$currentposition];
+		$currentposition=array_search($target, $show);
+		$current=$show[$currentposition];
 			$showlength=count($show);
 			if($currentposition==0){
 				$previous=$show[$showlength-1];
@@ -118,12 +118,19 @@ if($action=='switch'){
       break;
     
     case 'dropdown':
-      $buttons='<select onchange="fetch(\'sc_switchbox.php?action=switch&target=\' + this.options[selectedIndex].value,\'switchbox\',\'replace\',\'event\');">';
+		$buttons='<select onchange="fetch(\'sc_switchbox.php?action=switch&target=\' + this.options[selectedIndex].value,\'switchbox\',\'replace\',\'event\');">';
 			foreach($show AS $key){
 			  $buttons.='<option value="'.$key.'">'.$_switchboxlanguage->module[$boxes[$key][1]].'</option>';
 			}
 			echo $buttons.'</select></div>';
       break;
+	  
+	case 'links':
+		foreach($show AS $key){
+			$buttons.='<a href="#" style="padding-right: 10px;" onclick="fetch(\'sc_switchbox.php?action=switch&target='.$key.'\',\'switchbox\',\'replace\',\'event\');">'.$_switchboxlanguage->module[$boxes[$key][1]].'</a>&nbsp;';
+		}
+		echo $buttons.'</div>';
+	break;
   }
 	
 	include($boxes[$target][0]);

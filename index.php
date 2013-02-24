@@ -85,15 +85,6 @@ $index_language = $_language->module;
 			</nav>
             <div class="ticker">
 				<div class="ticker_box">
-					<div class="ticker_box_header">
-						<ul class="ticker_navi">
-							<li class="ticker_box_navi">Scores</li>
-							<li class="ticker_box_navi">Files</li>
-							<li class="ticker_box_navi">Threads</li>
-							<li class="ticker_box_navi">Last News</li>
-							<li class="ticker_box_navi">Liga Ticker</li>
-						</ul>
-					</div>
 					<div class="ticker_box_content">
 						<?php include("sc_switchbox.php"); ?>
 					</div>

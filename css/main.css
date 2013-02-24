@@ -203,15 +203,6 @@ header {
 	float: left;
 }
 
-.ticker_box_header {
-	background-image: url('../img/ticker_box/ticker_box_header_background.png');
-	background-repeat: no-repeat;
-	width: 387px;
-	height: 31px;
-	float: left;
-	padding-left: 54px;
-}
-
 .ticker_box_navi {
 	float: left;
 	padding-left: 10px;
@@ -226,7 +217,7 @@ header {
 }
 
 .ticker_box_content {
-    padding-top: 32px;
+    padding-top: 8px;
 }
 
 .member_box {
