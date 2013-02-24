@@ -76,7 +76,7 @@ $index_language = $_language->module;
 					<a href="index.php?site=squads"><li class="nav_teams">&nbsp;</li></a>
 					<a href="index.php?site=clanwars"><li class="nav_matches">&nbsp;</li></a>
 					<a href="index.php?site=forum"><li class="nav_board">&nbsp;</li></a>
-					<li class="nav_media">&nbsp;</li>
+					<a href="index.php?site=movies"><li class="nav_media">&nbsp;</li></a>
 					<a href="index.php?site=server"><li class="nav_server">&nbsp;</li></a>
 					<a href="index.php?site=files"><li class="nav_downloads">&nbsp;</li></a>
 					<a href="index.php?site=imprint"><li class="nav_imprint">&nbsp;</li></a>

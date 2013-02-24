@@ -10,7 +10,7 @@
 #                                   /                                    #
 #                                                                        #
 #                                                                        #
-#   Copyright 2005-2011 by webspell.org                                  #
+#   Copyright 2005-2009 by webspell.org                                  #
 #                                                                        #
 #   visit webSPELL.org, webspell.info to get webSPELL for free           #
 #   - Script runs under the GNU GENERAL PUBLIC LICENSE                   #
@@ -24,7 +24,7 @@
 #                                                                        #
 ##########################################################################
 */
-$bg1 = BG_1;
+//$bg1 = BG_1;
 function checkCommentsAllow($type, $parentID){
 	global $userID;
 	$moduls = array();
@@ -34,6 +34,7 @@ function checkCommentsAllow($type, $parentID){
 	$moduls['cw'] = array("clanwars","cwID","comments");
 	$moduls['de'] = array("demos","demoID","comments");
 	$moduls['po'] = array("poll","pollID","comments");
+	$moduls['mo'] = array("movies","movID","comments");
 	$allowed = 0;
 	$modul = $moduls[$type];
 	$get = safe_query("SELECT ".$modul[2]." FROM ".PREFIX.$modul[0]." WHERE ".$modul[1]."='".$parentID."'");
@@ -59,7 +60,7 @@ if(isset($_POST['savevisitorcomment'])) {
 	$parentID = (int)$_POST['parentID'];
 	$type = $_POST['type'];
 	$message = $_POST['message'];
-	$ip = $GLOBALS['ip'];
+	$ip = $_SERVER['REMOTE_ADDR'];
 	$CAPCLASS = new Captcha;
 
 	setcookie("visitor_info", $name."--||--".$mail."--||--".$url, time()+(3600*24*365));

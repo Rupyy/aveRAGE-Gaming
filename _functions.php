@@ -10,7 +10,7 @@
 #                                   /                                    #
 #                                                                        #
 #                                                                        #
-#   Copyright 2005-2011 by webspell.org                                  #
+#   Copyright 2005-2010 by webspell.org                                  #
 #                                                                        #
 #   visit webSPELL.org, webspell.info to get webSPELL for free           #
 #   - Script runs under the GNU GENERAL PUBLIC LICENSE                   #
@@ -276,6 +276,10 @@ $_language->set_language($default_language);
 
 systeminc('func/gallery');
 
+// -- Movies -- //
+
+systeminc('func/movies');
+
 // -- BB CODE -- //
 
 systeminc('func/bbcode');
@@ -401,6 +405,7 @@ $timeout=5; // 1 second
 $deltime = time()-($timeout*60); // IS 1m
 $wasdeltime = time()-(60*60*24); // WAS 24h
 
+if($userID) safe_query("UPDATE ".PREFIX."user SET ip='$ip' WHERE userID='".$userID."'");
 safe_query("DELETE FROM ".PREFIX."whoisonline WHERE time < '".$deltime."'");  // IS online
 safe_query("DELETE FROM ".PREFIX."whowasonline WHERE time < '".$wasdeltime."'");  // WAS online
 
@@ -439,9 +444,6 @@ $deltime = $time-(3600*24);
 safe_query("DELETE FROM ".PREFIX."counter_iplist WHERE del<".$deltime);
 
 if(!mysql_num_rows(safe_query("SELECT ip FROM ".PREFIX."counter_iplist WHERE ip='".$GLOBALS['ip']."'"))) {
-	if($userID){
-		safe_query("UPDATE ".PREFIX."user SET ip='".$GLOBALS['ip']."' WHERE userID='".$userID."'");
-	}
 	safe_query("UPDATE ".PREFIX."counter SET hits=hits+1");
 	safe_query("INSERT INTO ".PREFIX."counter_iplist (dates, del, ip) VALUES ('".$date."', '".$time."', '".$GLOBALS['ip']."')");
 	if(!mysql_num_rows(safe_query("SELECT dates FROM ".PREFIX."counter_stats WHERE dates='".$date."'")))

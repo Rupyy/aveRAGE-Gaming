@@ -10,7 +10,7 @@
 #                                   /                                    #
 #                                                                        #
 #                                                                        #
-#   Copyright 2005-2011 by webspell.org                                  #
+#   Copyright 2005-2009 by webspell.org                                  #
 #                                                                        #
 #   visit webSPELL.org, webspell.info to get webSPELL for free           #
 #   - Script runs under the GNU GENERAL PUBLIC LICENSE                   #
@@ -28,7 +28,6 @@
 include("_mysql.php");
 include("_settings.php");
 include("_functions.php");
-$_language->read_module('rating');
 
 if(!$userID) die($_language->module['no_access']);
 
@@ -37,7 +36,7 @@ $key = "0";
 
 $rating = $_POST['rating'];
 settype($rating, "integer");
-if($rating > 10 OR $rating < 0) die($_language->module['just_rate_between_0_10']);
+if($rating > 10 OR $rating < 0) die("Please rate only from 0 to 10 points!");
 $type = $_POST['type'];
 $id = $_POST['id'];
 
@@ -56,6 +55,10 @@ elseif($type == "fi") {
 elseif($type == "ga") {
 	$table = "gallery_pictures";
 	$key = "picID";
+}
+elseif($type == "mov") {
+	$table = "movies";
+	$key = "movID";
 }
 
 
@@ -89,5 +92,6 @@ if($table == "gallery_pictures") $table = "gallery&picID=".$id;
 elseif($table == "articles") $table = "articles&action=show&articlesID=".$id;
 elseif($table == "demos") $table = "demos&action=showdemo&demoID=".$id;
 elseif($table == "files") $table = "files&file=".$id;
+elseif($table == "movies") $table = "movies&action=show&id=".$id;
 header("Location: index.php?site=".$table);
 ?>

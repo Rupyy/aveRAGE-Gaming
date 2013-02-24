@@ -10,7 +10,7 @@
 #                                   /                                    #
 #                                                                        #
 #                                                                        #
-#   Copyright 2005-2011 by webspell.org                                  #
+#   Copyright 2005-2010 by webspell.org                                  #
 #                                                                        #
 #   visit webSPELL.org, webspell.info to get webSPELL for free           #
 #   - Script runs under the GNU GENERAL PUBLIC LICENSE                   #
@@ -27,7 +27,7 @@
 
 // -- ERROR REPORTING -- //
 
-define('DEBUG', "ON");
+define('DEBUG', "OFF");
 error_reporting(0); // 0 = public mode, E_ALL = development-mode
 
 // -- SET ENCODING FOR MB-FUNCTIONS -- //
@@ -144,7 +144,7 @@ function system_error($text,$system=1) {
 	  <meta name="description" content="Clanpage using webSPELL 4 CMS" />
 	  <meta name="author" content="webspell.org" />
 	  <meta name="keywords" content="webspell, webspell4, clan, cms" />
-	  <meta name="copyright" content="Copyright &copy; 2005 - 2011 by webspell.org" />
+	  <meta name="copyright" content="Copyright &copy; 2005 - 2009 by webspell.org" />
 	  <meta name="generator" content="webSPELL" />
 	  <title>webSPELL</title>
   </head>
@@ -202,7 +202,7 @@ $maxresults					=	$ds['results']; 			if(empty($maxresults)) $maxresults = 5;
 $maxupcoming				=	$ds['upcoming']; 			if(empty($maxupcoming)) $maxupcoming = 5;
 $maxguestbook				=	$ds['guestbook']; 			if(empty($maxguestbook)) $maxguestbook = 20;
 $maxshoutbox				=	$ds['shoutbox']; 			if(empty($maxshoutbox)) $maxshoutbox = 5;
-$maxsball					=	$ds['sball']; 				if(empty($maxsball)) $maxsball = 5;
+$maxsball					=	$ds['sball']; 				if(empty($latestarticles)) $latestarticles = 5;
 $sbrefresh					=	$ds['sbrefresh']; 			if(empty($sbrefresh)) $sbrefresh = 60;
 $maxtopics					=	$ds['topics']; 				if(empty($maxtopics)) $maxtopics = 20;
 $maxposts					=	$ds['posts']; 				if(empty($maxposts)) $maxposts = 10;
@@ -240,6 +240,8 @@ $max_wrong_pw 				= 	$ds['max_wrong_pw']; 		if(empty($max_wrong_pw)) $max_wrong_
 $lastBanCheck 				= 	$ds['bancheck']; 
 $insertlinks				=	$ds['insertlinks'];
 $new_chmod = 0666;
+$allow_usermovies=1; // 1= users are allowed to add videos; 0= no usermovies allowed
+$admin_activation=1; // 1= admin activasion enabled; 2= admin activasion disabled
 
 // -- STYLES -- //
 
