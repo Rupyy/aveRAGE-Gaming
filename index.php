@@ -120,7 +120,7 @@ $index_language = $_language->module;
 		<section class="content">
 			<?php
 				switch ($site) {
-				case "forum" OR "forum_topic":
+				case "forum":
 			?>
 				<article class="forum_index">
 					<?php
@@ -148,6 +148,19 @@ $index_language = $_language->module;
 					<div class="login_area"><?php include("login.php"); ?></div>
 					<span><?php include("sc_sponsors.php"); ?></span>
 				</aside>
+			<?php ;
+					break;
+				case "forum_topic":
+			?>
+				<article class="forum_index">
+					<?php
+					if(!isset($site)) $site="news";
+					$invalide = array('\\','/','/\/',':','.');
+					$site = str_replace($invalide,' ',$site);
+					if(!file_exists($site.".php")) $site = "news";
+					include($site.".php");
+					?>
+				</article>
 			<?php ;
 					break;
 				default:
