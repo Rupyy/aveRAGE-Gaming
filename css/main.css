@@ -476,9 +476,9 @@ footer {
 	border-top: solid 1px #1f1f1f; 
 	border-bottom: transparent;
 }
-.forum_message {
-	float: left; 
-	padding: 6px; 
+.forum_message { 
+	padding-left: 120px;
+	padding-top: 3px;
 	min-height: 165px; 
 	border-left: 1px solid #1f1f1f;
 }

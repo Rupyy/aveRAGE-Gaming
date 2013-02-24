@@ -120,7 +120,7 @@ $index_language = $_language->module;
 		<section class="content">
 			<?php
 				switch ($site) {
-				case "forum":
+				case "forum" OR "forum_topic":
 			?>
 				<article class="forum_index">
 					<?php
