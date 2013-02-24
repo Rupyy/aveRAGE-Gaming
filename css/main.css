@@ -1,0 +1,741 @@
+html,
+button,
+input,
+select,
+textarea {
+    font-family: Arial;
+	font-size: 12px;
+}
+
+body {
+    font-family: Arial;
+	font-size: 12px;
+    background-color: #181818;
+    width: 1024px;
+    margin: 0 auto;
+	color: #ca5a0c;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img { vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+a { color: #ca5a0c; text-decoration: none;}
+a:hover { color: #ca5a0c; }
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+  
+@font-face { font-family: Swiss; src: url('../fonts/SWISSCB-DTYPE.TTF'); }
+  
+header {
+	background-image: url('../img/header.png');
+    background-repeat: no-repeat;
+	width: 1024px;
+	height: 520px;
+}
+
+.navi {
+	margin: 0;
+	list-style-type: none;
+	padding-left: 193px;
+}
+
+.nav_home { 
+	background-image: url('../img/nav/button_home_complete.png');
+	background-repeat: no-repeat;
+	width: 78px;
+	height: 50px;	
+	float: left;
+}
+.nav_home:hover {
+	background-position: -78px;
+}
+
+.nav_teams {
+	background-image: url('../img/nav/button_teams_complete.png');
+	background-repeat: no-repeat;
+	width: 76px;
+	height: 50px;	
+	float: left;
+}
+.nav_teams:hover {
+	background-position: -76px;
+}
+
+.nav_matches {
+	background-image: url('../img/nav/button_matches_complete.png');
+	background-repeat: no-repeat;
+	width: 99px;
+	height: 50px;	
+	float: left;
+}
+.nav_matches:hover {
+	background-position: -99px;
+}
+
+.nav_board {
+	background-image: url('../img/nav/button_board_complete.png');
+	background-repeat: no-repeat;
+	width: 80px;
+	height: 50px;	
+	float: left;
+}
+.nav_board:hover {
+	background-position: -80px;
+}
+
+.nav_media {
+	background-image: url('../img/nav/button_media_complete.png');
+	background-repeat: no-repeat;
+	width: 93px;
+	height: 50px;	
+	float: left;
+}
+.nav_media:hover {
+	background-position: -93px;
+}
+
+.nav_server {
+	background-image: url('../img/nav/button_server_complete.png');
+	background-repeat: no-repeat;
+	width: 86px;
+	height: 50px;	
+	float: left;
+}
+.nav_server:hover {
+	background-position: -86px;
+}
+
+.nav_downloads {
+	background-image: url('../img/nav/button_downloads_complete.png');
+	background-repeat: no-repeat;
+	width: 121px;
+	height: 50px;	
+	float: left;
+}
+.nav_downloads:hover {
+	background-position: -121px;
+}
+
+.nav_imprint {
+	background-image: url('../img/nav/button_imprint_complete.png');
+	background-repeat: no-repeat;
+	width: 91px;
+	height: 50px;	
+	float: left;
+}
+.nav_imprint:hover {
+	background-position: -91px;
+}
+
+.nav_contact {
+	background-image: url('../img/nav/button_contact_complete.png');
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 50px;	
+	float: left;
+}
+.nav_contact:hover {
+	background-position: -100px;
+}
+
+.ticker {
+	padding-top: 216px;
+	font-family: Swiss;
+	font-size: 12px;
+	color: #fff;
+}
+
+.ticker_box {
+	background-image: url('../img/ticker_box/tickerbox_bg.png');
+	background-repeat: no-repeat;
+	width: 387px;
+	height: 304px;	
+	float: left;
+}
+
+.ticker_box_header {
+	background-image: url('../img/ticker_box/ticker_box_header_background.png');
+	background-repeat: no-repeat;
+	width: 387px;
+	height: 31px;
+	float: left;
+	padding-left: 54px;
+}
+
+.ticker_box_navi {
+	float: left;
+	padding-left: 10px;
+}
+
+.ticker_box_navi:hover {
+	color: #e57124;
+}
+
+.ticker_navi {
+	list-style-type: none;
+}
+
+.ticker_box_content {
+    padding-top: 32px;
+}
+
+.member_box {
+	background-image: url('../img/member_box/bannerbox_bg.png');
+	background-repeat: no-repeat;
+	margin-left: 386px;
+	width: 638px;
+	height: 304px;
+}
+
+.container {
+	overflow:visible;
+}
+
+.member_box_banner {
+	width: 100%;
+	padding-top: 2px;
+	padding-left: 3px;
+}
+
+.content {
+	background-image: url('../img/content/content_bg.png');
+	background-repeat: repeat-y;
+	width: 1024px;
+	float: left;
+}
+
+.content_header {
+	background-image: url('../img/content/content_header_background.png');
+	background-repeat: no-repeat;
+	width: 1024px;
+	height: 23px;
+	float: left;
+}
+
+.news {
+	width: 678px;
+	padding-left: 25px;
+	margin-bottom: 40px;
+	float: left;
+}
+
+.forum_index {
+	width: 1020px;
+	padding-left: 2px;
+	margin-bottom: 40px;
+	float: left;
+}
+
+.profile {
+	width: 678px;
+	padding-left: 3px;
+	margin-bottom: 40px;
+	float: left;
+}
+
+.side_content {
+	float: right;
+	padding-right: 18px;
+}
+
+.login_area {
+	font-family: Arial;
+	font-size: 12px;
+	color: #706f6f;
+	padding-left: 9px;
+	padding-bottom: 32px;
+}
+
+.sponsor_area {
+	width: 100%;
+}
+
+.video_area {
+	background-image: url('../img/content/video_area_background.png');
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 223px;
+	float: left;
+}
+
+.video1 {
+	padding-left: 59px;
+	padding-top: 42px;
+	float: left;
+}
+
+.video2 {
+	padding-left: 10px;
+	padding-top: 42px;
+	float: left;
+}
+
+.video3 {
+	padding-left: 10px;
+	padding-top: 42px;
+	float: left;
+}
+
+.content_footer {
+	background-image: url('../img/content/footer_background.png');
+	background-repeat: no-repeat;
+	width: 1024px;
+	height: 177px;
+	clear: both;
+}
+
+footer {
+	float: left;
+}
+
+.footer_imprint {
+	font-size: 12px;
+	padding-left: 51px;
+	padding-top: 61px;
+	float: left;
+}
+
+.advert_left {
+	width: 284px;
+	height: 1294px;
+	float: left;
+}
+
+.advert_right {
+	width: 292px;
+	height: 1294px;
+	float: left;
+	position: absolute;
+	top: 0px;
+	left: 1460px;
+}
+
+/* Ab hier Webspell CSS Edits */
+
+.news_title {
+	font-family: Arial;
+	font-size: 18px;
+	color: #d75f24;
+}
+
+.news_author {
+	font-family: Arial;
+	font-size: 11px;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+.news_rubric_banner {
+	float: left;
+}
+
+.news_rubric_content {
+	float: left;
+	font-family: Arial;
+	font-size: 12px;
+	color: #f7f7f7;
+	width: 88%;
+	padding-left: 9px;
+	padding-bottom: 15px;
+	height: 243px;
+}
+
+.news_commentaries {
+	background-image: url('../img/content/news_commentary_background.png');
+	background-repeat: no-repeat;
+	height: 23px;
+	width: 632px;
+	float: left;
+	padding-bottom: 20px;
+	margin-left: 20px;
+}
+
+.overflown {
+    font-size: 12px;
+    color: #ca5a0c;
+    font-family: Arial;
+    padding-top: 20px;
+}
+
+/***********************************/
+/* 2ONE-DESIGNS FORUM MOD EDITINGS */
+/***********************************/
+
+#tab_2 { /* OUTER CONTAINER */
+	background: #1f1f1f;
+}
+
+.forum_title {
+  font-family: Arial;
+  font-size: 10px;
+  color: #ca5a0c;
+  background: #1f1f1f;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px;
+}
+.topic_title {
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-bottom: 1px dotted #1f1f1f;
+	padding: 5px;
+}
+.forum_katg {
+	height: 20px;
+	background: url(images/forum_katg_bg.png) repeat-x;
+	font-family: Arial;
+	font-size: 13px;
+	color: #2D2D2D;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-bottom: 1px solid #1f1f1f; 
+	padding: 6px; 
+	line-height: 22px;
+}	
+.forum_katg_topic {
+	height: 17px;
+	background: url(images/forum_katg_bg.png) repeat-x;
+	font-family: Arial;
+	font-size: 13px;
+	color: #2D2D2D;
+	font-weight: bold;
+	text-transform: uppercase;
+	border-bottom: 1px solid #1f1f1f;
+	padding: 12px 0 6px 0;
+}	
+.forum_topic_stats {
+	padding: 0 0 6px 6px;
+}
+.forum_mod {
+	font-size: 10px;
+	color: #AFAFAF;
+}
+.forum_border {
+	background: url(images/forum_bg.png) repeat-x;
+	border-bottom: 1px solid #1f1f1f; 
+	padding: 4px;
+}
+.forum_border2 {
+	background: url(images/forum_bg.png) repeat-x;
+	border-bottom: 1px solid #1f1f1f;
+	border-left: 1px solid #1f1f1f; 
+	padding: 4px;
+}
+.forum_stats {
+	border-bottom: 1px solid #1f1f1f;
+	padding: 5px; 
+	font-size: 11px; 
+	color: #989696;
+}
+.forum_hr {
+	margin-top: 15px;
+	border: 0px; 
+	border-top: solid 1px #1f1f1f; 
+	border-bottom: transparent;
+}
+.forum_message {
+	float: left; 
+	padding: 6px; 
+	min-height: 165px; 
+	border-left: 1px solid #1f1f1f;
+}
+.sig {
+	color: #B4B4B4;
+}
+.forum_ava {
+	background: url(images/forum_ava_shadow.png) no-repeat center; 
+	height: 100px;
+}
+.katg_small {
+  font-family: Arial;
+  font-size: 10px;
+  color: #505050;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+a.forum_katg_link, a.forum_katg_link:visited, a.forum_katg_link:active {
+  font-family: Arial;
+  font-size: 13px;
+  color: #ca5a0c;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+a.forum_katg_link:hover {
+  color: #727272;
+  font-weight: bold;
+}
+a.forum_err, a.forum_err:visited, a.forum_err:active {
+	font-family: Arial;
+	font-size: 11px;
+	color: #D60000;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+a.forum_err:hover {
+	font-family: Arial;
+	font-size: 11px;
+	color: #D60000;
+	text-decoration: underline;
+	font-weight: bold;
+}
+a.forum, a.forum:visited, a.forum:active {
+	font-family: Arial;
+	font-size: 11px;
+	color: #8E8C8C;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+a.forum:hover {
+	font-family: Arial;
+	font-size: 11px;
+	color: #8E8C8C;
+	text-decoration: underline;
+	font-weight: bold;
+}
+/***************************************/
+/* 2ONE-DESIGNS FORUM MOD EDITINGS END */
+/***************************************/
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   Theses examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

@@ -1,0 +1,15 @@
+.member_head{
+	background-color:#353535;
+	cursor:pointer;
+	padding:10px;
+}
+.member_head_over{
+	background-color:#252525;
+	cursor:pointer;
+	padding:10px;
+}
+.member_open{
+	padding:10px;
+	background-color:#252525;
+	margin-bottom:10px;
+}
