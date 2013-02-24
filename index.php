@@ -95,7 +95,7 @@ $index_language = $_language->module;
 						</ul>
 					</div>
 					<div class="ticker_box_content">
-						<?php include("sc_results.php"); ?>
+						<?php include("sc_switchbox.php"); ?>
 					</div>
 				</div>
 			</div>
