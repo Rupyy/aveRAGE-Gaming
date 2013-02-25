@@ -41,7 +41,6 @@ $index_language = $_language->module;
     <head>
         <meta charset="utf-8">
         <title><?php echo PAGETITLE; ?></title>
-        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" type="text/css" href="css/normalize.css" />
         <link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link rel="stylesheet" type="text/css" href="css/slider.css" />

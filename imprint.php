@@ -51,27 +51,19 @@ $headline2 = $_language->module['coding'];
 if($imprint_type) {
 
 	$ds=mysql_fetch_array(safe_query("SELECT imprint FROM `".PREFIX."imprint`"));
-	$imprint_head = htmloutput($ds['imprint'])."<br /><br />";
+	$imprint_head = htmloutput($ds['imprint']);
 
 } else{
 
-	$imprint_head='<table border="0" width="96%" align="center">
-    <tr>
-      <td colspan="2"><b>'.$_language->module['responsible_persons'].'</b></td>
-    </tr>
-    <tr>
-      <td width="130" valign="top"><br /><b>'.$_language->module['webmaster'].'</b></td>
-      <td><br /><a href="mailto:'.mail_protect($admin_email).'">'.$admin_name.'</a></td>
-    </tr>
-    <tr>
-      <td valign="top"><br /><b>'.$_language->module['admins'].'</b></td>
-      <td><br />'.$administrators.'</td>
-    </tr>
-    <tr>
-      <td valign="top"><br /><b>'.$_language->module['mods'].'</b></td>
-      <td><br />'.$moderators.'</td>
-    </tr>
-  </table>';
+	$imprint_head='<div>
+      <div colspan="2"><b>'.$_language->module['responsible_persons'].'</b></div>
+      <div width="130" valign="top"><br /><b>'.$_language->module['webmaster'].'</b></div>
+      <div><br /><a href="mailto:'.mail_protect($admin_email).'">'.$admin_name.'</a></div>
+      <div valign="top"><br /><b>'.$_language->module['admins'].'</b></div>
+      <div><br />'.$administrators.'</td>
+      <div valign="top"><br /><b>'.$_language->module['mods'].'</b></div>
+      <div><br />'.$moderators.'</div>
+  </div>';
 }
 
 eval ("\$imprint = \"".gettemplate("imprint")."\";");
