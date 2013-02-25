@@ -36,7 +36,10 @@ body {
  * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
  */
 
-img { vertical-align: middle; }
+img { 
+	vertical-align: middle; 
+	border: 0;
+}
 
 /*
  * Remove default fieldset styles.

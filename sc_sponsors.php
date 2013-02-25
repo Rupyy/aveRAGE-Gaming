@@ -34,7 +34,7 @@ if(mysql_num_rows($mainsponsors)) {
 	//echo '<b>'.$main_title.'</b><br />';
 	
 	while($da=mysql_fetch_array($mainsponsors)) {
-		if(!empty($da['banner_small'])) $sponsor='<img src="images/sponsors/'.$da['banner_small'].'" style="margin:2px 0;" border="0" alt="'.htmlspecialchars($da['name']).'" title="'.htmlspecialchars($da['name']).'" />';
+		if(!empty($da['banner_small'])) $sponsor='<img src="images/sponsors/'.$da['banner_small'].'" style="margin:2px 0;" alt="'.htmlspecialchars($da['name']).'" title="'.htmlspecialchars($da['name']).'" />';
 		else $sponsor=$da['name'];
 		$sponsorID = $da['sponsorID'];
 		
@@ -51,7 +51,7 @@ if(mysql_num_rows($sponsors)) {
 	echo '<b>'.$title.'</b><br />';
 	
 	while($db=mysql_fetch_array($sponsors)) {
-		if(!empty($db['banner_small'])) $sponsor='<img src="images/sponsors/'.$db['banner_small'].'" style="margin:2px 0;" border="0" alt="'.htmlspecialchars($db['name']).'" title="'.htmlspecialchars($db['name']).'" />';
+		if(!empty($db['banner_small'])) $sponsor='<img src="images/sponsors/'.$db['banner_small'].'" style="margin:2px 0;" alt="'.htmlspecialchars($db['name']).'" title="'.htmlspecialchars($db['name']).'" />';
 		else $sponsor=$db['name'];
 		$sponsorID = $db['sponsorID'];
 		

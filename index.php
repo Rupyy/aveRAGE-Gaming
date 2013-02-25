@@ -40,16 +40,14 @@ $index_language = $_language->module;
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title><?php echo PAGETITLE; ?></title>
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="css/normalize.css" />
-        <link rel="stylesheet" href="css/main.css" />
-		<link href="css/slider.css" rel="stylesheet" type="text/css" />
-		<!-- <link href="css/files_menu.css" rel="stylesheet" type="text/css" /> -->
+        <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/slider.css" />
 		<link href="tmp/rss.xml" rel="alternate" type="application/rss+xml" title="<?php echo getinput($myclanname); ?> - RSS Feed" />
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-        <script src="js/bbcode.js" language="jscript" type="text/javascript"></script>
+        <script src="js/bbcode.js" type="text/javascript"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script src="http://html5form.googlecode.com/svn/trunk/jquery.html5form-1.5-min.js"></script>    
 		<script>
@@ -71,17 +69,17 @@ $index_language = $_language->module;
 		
         <header>
 			<nav>
-				<ul class="navi">
-					<a href="index.php?site=news"><li class="nav_home">&nbsp;</li></a>
-					<a href="index.php?site=squads"><li class="nav_teams">&nbsp;</li></a>
-					<a href="index.php?site=clanwars"><li class="nav_matches">&nbsp;</li></a>
-					<a href="index.php?site=forum"><li class="nav_board">&nbsp;</li></a>
-					<a href="index.php?site=movies"><li class="nav_media">&nbsp;</li></a>
-					<a href="index.php?site=server"><li class="nav_server">&nbsp;</li></a>
-					<a href="index.php?site=files"><li class="nav_downloads">&nbsp;</li></a>
-					<a href="index.php?site=imprint"><li class="nav_imprint">&nbsp;</li></a>
-					<a href="index.php?site=contact"><li class="nav_contact">&nbsp;</li></a>	
-				</ul>
+				<div class="navi">
+					<a href="index.php?site=news" class="nav_home"></a>
+					<a href="index.php?site=squads" class="nav_teams"></a>
+					<a href="index.php?site=clanwars" class="nav_matches"></a>
+					<a href="index.php?site=forum" class="nav_board"></a>
+					<a href="index.php?site=movies" class="nav_media"></a>
+					<a href="index.php?site=server" class="nav_server"></a>
+					<a href="index.php?site=files" class="nav_downloads"></a>
+					<a href="index.php?site=imprint" class="nav_imprint"></a>
+					<a href="index.php?site=contact" class="nav_contact"></a>	
+				</div>
 			</nav>
             <div class="ticker">
 				<div class="ticker_box">
@@ -97,16 +95,16 @@ $index_language = $_language->module;
 						<div id="mask">
 							<ul>
 								<li>
-									<a href="#" title="View my first image link"><img src="img/member_box/banner_test.png" /></a>
+									<a href="#" title="View my first image link"><img src="img/member_box/banner_test.png" alt="Member Banner Dummy" /></a>
 								</li>
 								<li>
-									<a href="#" title="View my second image link"><img src="img/member_box/banner_test.png" /></a>
+									<a href="#" title="View my second image link"><img src="img/member_box/banner_test.png" alt="Member Banner Dummy" /></a>
 								</li>
 								<li>
-									<a href="#" title="View my first image link"><img src="img/member_box/banner_test.png" /></a>
+									<a href="#" title="View my first image link"><img src="img/member_box/banner_test.png" alt="Member Banner Dummy" /></a>
 								</li>
 								<li>			
-									<a href="#" title="View my third image link"><img src="img/member_box/banner_test.png" /></a>
+									<a href="#" title="View my third image link"><img src="img/member_box/banner_test.png" alt="Member Banner Dummy" /></a>
 								</li>
 							</ul>
 						</div>
@@ -182,16 +180,16 @@ $index_language = $_language->module;
 			}
 			?>
 			<aside class="video_area">
-				<div class="video1"><iframe width="296" height="167" src="http://www.youtube.com/embed/GpbBZ8uCMbQ?rel=0" frameborder="0"></iframe></div>
-				<div class="video2"><iframe width="296" height="167" src="http://www.youtube.com/embed/GpbBZ8uCMbQ?rel=0" frameborder="0"></iframe></div>
-				<div class="video3"><iframe width="296" height="167" src="http://www.youtube.com/embed/GpbBZ8uCMbQ?rel=0" frameborder="0"></iframe></div>
+				<div class="video1"><iframe width="296" height="167" src="http://www.youtube.com/embed/GpbBZ8uCMbQ?rel=0" style="border: 0;"></iframe></div>
+				<div class="video2"><iframe width="296" height="167" src="http://www.youtube.com/embed/GpbBZ8uCMbQ?rel=0" style="border: 0;"></iframe></div>
+				<div class="video3"><iframe width="296" height="167" src="http://www.youtube.com/embed/GpbBZ8uCMbQ?rel=0" style="border: 0;"></iframe></div>
 			</aside>
 			<footer class="content_footer">
 				<div class="footer_imprint">
 					<p style="color: #ca5a0c;"><b>http:// average-gaming.de · gaming community since 2012<br />
 					Copyright ©2001 - 2013,  average-gaming.de</b></p>
 					<p style="color: #5b5a5a;"><b>Alle Rechte vorbehalten<br />
-					Powered by webSPELL (<a href="http://www.webspell.org">www.webspell.org</a>)</b></p>
+					Powered by webSPELL (<a href="http://www.webspell.org">www.webspell.org</a>)</b></p>					
 				</div>
 			</footer>			
 		</section>

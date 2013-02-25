@@ -41,7 +41,7 @@ if(mysql_num_rows($ergebnis)) {
 		$sponsor = '<a class="titlelink" href="out.php?sponsorID='.$ds['sponsorID'].'" target="_blank">'.$ds['name'].'</a>';
 		$link = '&#8226; <a href="out.php?sponsorID='.$ds['sponsorID'].'" target="_blank">'.$url.'</a>';
 		$info = cleartext($ds['info']);
-		$banner = '<a href="out.php?sponsorID='.$ds['sponsorID'].'" target="_blank"><img src="images/sponsors/'.$ds['banner'].'" alt="'.htmlspecialchars($ds['name']).'" border="0" /></a>';
+		$banner = '<a href="out.php?sponsorID='.$ds['sponsorID'].'" target="_blank"><img src="images/sponsors/'.$ds['banner'].'" alt="'.htmlspecialchars($ds['name']).'" /></a>';
 		
 		eval ("\$sponsors = \"".gettemplate("sponsors")."\";");
 		echo $sponsors;

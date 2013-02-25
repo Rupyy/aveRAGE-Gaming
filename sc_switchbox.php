@@ -138,7 +138,7 @@ if($action=='switch'){
 }
 else{
 	echo '<div id="switchbox"></div>';
-	echo '<script language="JavaScript" type="text/JavaScript">
+	echo '<script type="text/javascript">
 					<!-- 
 						fetch(\'sc_switchbox.php?action=switch\',\'switchbox\',\'replace\',\'event\'); 
 					-->
