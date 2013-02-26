@@ -29,7 +29,7 @@ $_language->read_module('login');
 
 if($loggedin) {
 	$username='<a href="index.php?site=profile&amp;id='.$userID.'"><b>'.strip_tags(getnickname($userID)).'</b></a>';
-	if(isanyadmin($userID)) $admin='<a href="admin/admincenter.php" target="_blank">'.$_language->module['admin'].'</a>';
+	if(isanyadmin($userID)) $admin='[<a href="admin/admincenter.php" target="_blank">'.$_language->module['admin'].'</a>]<br />';
 	else $admin='';
 	if(isclanmember($userID) or iscashadmin($userID)) $cashbox='<a href="index.php?site=cash_box">'.$_language->module['cash-box'].'</a>';
 	else $cashbox='';
