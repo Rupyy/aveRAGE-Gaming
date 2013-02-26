@@ -141,6 +141,7 @@ if(!isset($_SERVER['REQUEST_URI'])) {
       <li><a href="admincenter.php?site=imprint"><?php echo $_language->module['imprint']; ?></a></li>
       <li><a href="admincenter.php?site=bannerrotation"><?php echo $_language->module['bannerrotation']; ?></a></li>
       <li><a href="admincenter.php?site=scrolltext"><?php echo $_language->module['scrolltext']; ?></a></li>
+	  <li><a href="admincenter.php?site=movies">Movies</a></li>
     </ul>
     <?php } if(isforumadmin($userID)) { ?>
     <h2>&not; <?php echo $_language->module['forum']; ?></h2>

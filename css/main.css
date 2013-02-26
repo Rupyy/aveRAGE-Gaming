@@ -263,6 +263,13 @@ header {
 	float: left;
 }
 
+.movies_index {
+	width: 997px;
+	padding-left: 25px;
+	margin-bottom: 40px;
+	float: left;
+}
+
 .forum_index {
 	width: 1020px;
 	padding-left: 2px;

@@ -4,7 +4,7 @@
 //* Movie-Addon v2.0 by FIRSTBORN e.V. *
 //**************************************
 
-$movies_per_row=1;
+$movies_per_row=3;
 
 // Do not edit below this line! ***************************************************************************************
 
@@ -12,10 +12,9 @@ $_language->read_module('movies');
 
 $filepath = "../images/movies/";
 
-echo'<h2>Videos</h2>';
+echo'<span style="color: #fb6801; font-weight: bold; padding-left: 10px;">MEDIA DATABASE</span>
+<div style="background-image: url(\'/img/squads/squads_hr.png\'); background-repeat: no-repeat; width: 673px; height: 1px; padding-top: 46px;"></div>';
 
-if($userID) echo '<input type="button" class="button" onClick="MM_goToURL(\'parent\',\'index.php?site=myvideos\');return document.MM_returnValue" value="'.$_language->module['myvideos'].'"> <br /><br />';
-	 
 if($_GET['action']=="category") {
 
 
@@ -24,7 +23,7 @@ if($_GET['action']=="category") {
 	$sort = $_GET['sort'];
 	$type = $_GET['type'];
 	
-	echo ' &bull; <a href="index.php?site=movies"><b>'.$_language->module['movies'].'</b></a> &bull; '.getmovcat($movcatID).'';
+	echo ' » <a href="index.php?site=movies"><b>'.$_language->module['movies'].'</b></a> » '.getmovcat($movcatID).'';
 	
 	$gesamt = mysql_num_rows(safe_query("SELECT movID FROM ".PREFIX."movies WHERE movcatID='".$movcatID."' AND activated='2'"));
 	$pages=1;
@@ -84,7 +83,7 @@ if($_GET['action']=="category") {
 			if($ar[rating])	$ratingpic='<img src="images/rating'.$ar[rating].'.png" width="103" height="31" title="'.$ar[rating].' of 10; '.$ar[votes].' votes" />';
 			else $ratingpic='<img src="images/rating0.png" width="103" height="31" title="no votes yet" />';
 			
-			$pic='<img src="../images/movies/'.$ar[movscreenshot].'" width="200" height="115" border="1" alt="'.$movheadline.'">';
+			$pic='<img src="../images/movies/'.$ar[movscreenshot].'" width="200" height="115" alt="'.$movheadline.'">';
 			
 			
 	eval ("\$movies_content = \"".gettemplate("movies_content")."\";");
@@ -105,7 +104,7 @@ eval ("\$movies_foot = \"".gettemplate("movies_foot")."\";");
 	$movcatID = $movcat[movcatID];
 	$linkpageheadline = $movcat[movheadline];
 	
-	echo ' &bull; <a href="index.php?site=movies"><b>Movies</b></a> &bull; <a href="index.php?site=movies&action=category&movcatID='.$movcatID.'"><b>'.getmovcat($movcatID).'</b></a> &bull; '.$movcat[movheadline].'<br><br>';
+	echo ' » <a href="index.php?site=movies"><b>Movies</b></a> » <a href="index.php?site=movies&action=category&movcatID='.$movcatID.'"><b>'.getmovcat($movcatID).'</b></a> » '.$movcat[movheadline].'<br><br>';
 
 	if(isset($id)){
 		$res=safe_query("SELECT * FROM ".PREFIX."movies WHERE movID=$id");
@@ -247,29 +246,13 @@ else {
 			$n++;
 		}
 		$top5.='</table>';
-		
-		
-	
-	echo '<table width="100%" border="0" cellpadding="0" cellspacing="0">
-			<tr>
-				<td width="49%">'.$lastmov.'</td>
-				<td width="4"></td>
-	  			<td width="49%" valign="top">'.$top5.'</td>
-			</tr>
-		</table>
-		<br>';
 	
 	$ergebnis=safe_query("SELECT * FROM ".PREFIX."movie_categories ORDER BY movcatname");
 	
 	$border=BORDER;
 
-	echo '<table width="100%" cellpadding="5" cellspacing="1" border="0" bgcolor="'.$border.'">
-	   		<tr>
-	     		<td class="title" width="70%">'.$_language->module['category'].':</td>
-		 		<td class="title" width="30%" align="center">'.$_language->module['videos'].':</td>
-	   		</tr>';
-
-		$i=1;
+	$i=1;
+		
 	while($ds=mysql_fetch_array($ergebnis)) {
 	
 		if($i%2) {
@@ -283,36 +266,40 @@ else {
 	
 		$movcatID=$ds[movcatID];
 		$movcatheadline=$ds[movcatname];
-		
 		$videocount = mysql_num_rows(safe_query("SELECT movID FROM ".PREFIX."movies WHERE movcatID='".$movcatID."'"));
 		
-		if($videocount!=0) {
-		
-			if($i%2) {
-				$bg1=BG_1;
-				$bg2=BG_3;
-			}
-			else {
-				$bg1=BG_2;
-				$bg2=BG_3;
-			}
-		
-			echo '<tr>
-					<td bgcolor="'.$bg1.'"><a href="index.php?site=movies&action=category&movcatID='.$movcatID.'"><b>'.$movcatheadline.'</b></a></td>
-			  		<td bgcolor="'.$bg1.'" align="center">'.$videocount.'</td>
-				  </tr>';
-				  
-				 $i++;
-			}
-		else {
-			echo '';
+		// Get category names and their videos only when the video count is greater than zero
+		if($videocount > 0) {				
+			$getallmovies = safe_query("SELECT embed FROM ".PREFIX."movies WHERE movcatID = ".$movcatID."");
+			$getcatpicture = mysql_fetch_array(safe_query("SELECT movcatpicture FROM ".PREFIX."movie_categories WHERE movcatID = ".$movcatID.""));
+			$x=1;
+			echo '<img onclick="toggle_visibility(\'foo\');" src="../images/movies/'.$getcatpicture[0].'" /><br />';
+	?>
+			<div id="foo" style="float: left; display: none;">			
+	<?php
+			
+			echo '<br />'.$movcatheadline.' ('.$videocount.' Videos) <br />';			
+			
+			while($row = mysql_fetch_array($getallmovies)){	
+				if($x<4) {
+					echo '<div style="float: left; padding-right: 10px;">';
+					echo $row[0];
+					$x++;
+				}
+				else
+				{
+					echo '<div style="padding-top: 10px;">';
+					echo $row[0];
+					echo '</div>';
+					$x=0;
+				}
+			}			
+	?>
+			</div>
+			</div>
+	<?php	
 		}
-			  
 	}
-	
-	
-	echo '</tr><tr>
- 		<td colspan="2" align="right">Movie-Addon by <a href="http://www.firstborn.de"><b>FIRSTBORN e.V.</b></a></td></tr></table>';	
 }
 
 ?>

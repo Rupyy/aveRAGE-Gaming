@@ -54,6 +54,17 @@ $index_language = $_language->module;
 				$('#myform').html5form();    
 			});
 		</script>
+		<script type="text/javascript">
+			<!--
+				function toggle_visibility(id) {
+				   var e = document.getElementById(id);
+				   if(e.style.display == 'block')
+					  e.style.display = 'none';
+				   else
+					  e.style.display = 'block';
+				}
+			//-->
+		</script>
     </head>
     
     <body>
@@ -150,6 +161,19 @@ $index_language = $_language->module;
 				case "forum_topic":
 			?>
 				<article class="forum_index">
+					<?php
+					if(!isset($site)) $site="news";
+					$invalide = array('\\','/','/\/',':','.');
+					$site = str_replace($invalide,' ',$site);
+					if(!file_exists($site.".php")) $site = "news";
+					include($site.".php");
+					?>
+				</article>
+			<?php ;
+					break;
+				case "movies":
+			?>
+				<article class="movies_index">
 					<?php
 					if(!isset($site)) $site="news";
 					$invalide = array('\\','/','/\/',':','.');
